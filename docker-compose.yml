@@ -2,12 +2,14 @@ version: '3.8'
 services:
   db:
     image: postgres:14
+    restart: always
     environment:
       POSTGRES_USER: postgres
       POSTGRES_PASSWORD: postgres
       POSTGRES_DB: todo_db
     volumes:
       - postgres_data:/var/lib/postgresql/data
+      - ./init.sql:/docker-entrypoint-initdb.d/init.sql
     ports:
       - "5433:5432"
       
@@ -20,6 +22,6 @@ services:
     environment:
       DATABASE_URL: postgres://postgres:postgres@db:5432/todo_db
       JWT_SECRET: MNqk9RU4Lv2tcnle6nfEgEmI6jyauPFrEVUV4zeF2Dg=
-
+    command: ["sh", "-c", "npm run seed && npm start"]
 volumes:
   postgres_data:

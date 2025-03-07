@@ -15,5 +15,5 @@ RUN npm run build
 
 EXPOSE 3000
 
-# Jalankan aplikasi
+# Jalankan seed script lalu start aplikasi
 CMD ["npm", "start"]

@@ -19,7 +19,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
     if (!task) return res.status(404).json({ message: 'Task not found' });
 
     let updatedTask;
-    if (user.role === 'lead') {
+    if (user.role !== 'team') {
       const updateRes = await db.query(
         'UPDATE tasks SET title = COALESCE($1, title), description = COALESCE($2, description), status = COALESCE($3, status), updated_at = NOW() WHERE id = $4 RETURNING *',
         [title, description, status, id]

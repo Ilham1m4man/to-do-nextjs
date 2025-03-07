@@ -1,6 +1,6 @@
 import type { NextApiRequest, NextApiResponse } from 'next';
 import jwt from 'jsonwebtoken';
-import bcrypt from 'bcrypt';
+import bcrypt from 'bcryptjs';
 import db from '@/lib/db';
 
 export default async function handler(req: NextApiRequest, res: NextApiResponse) {

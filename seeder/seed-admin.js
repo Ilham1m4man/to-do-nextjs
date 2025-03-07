@@ -37,7 +37,7 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var db_1 = require("../lib/db");
-var bcrypt = require("bcrypt");
+var bcrypt = require("bcryptjs");
 function seedAdmin() {
     return __awaiter(this, void 0, void 0, function () {
         var result, count, hashedPassword;

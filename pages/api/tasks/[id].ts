@@ -1,6 +1,6 @@
 import type { NextApiRequest, NextApiResponse } from 'next';
-import { getUserFromToken } from '../../../lib/auth';
-import db from '../../../lib/db';
+import { getUserFromToken } from '@/lib/auth';
+import db from '@/lib/db';
 
 export default async function handler(req: NextApiRequest, res: NextApiResponse) {
   const { id } = req.query;

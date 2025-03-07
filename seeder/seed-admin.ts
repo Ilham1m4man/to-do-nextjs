@@ -1,5 +1,5 @@
 import db from '../lib/db';
-import * as bcrypt from 'bcrypt';
+import * as bcrypt from 'bcryptjs';
 
 async function seedAdmin() {
   const result = await db.query('SELECT COUNT(*) FROM users');
